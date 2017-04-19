@@ -1,0 +1,12 @@
+{{ partial "top" . }}
+
+<main class="max-width-4 mx-auto px2">
+    {{ partial "header" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ partial "footer" . }}
+</main>
+
+{{ partial "bottom" . }}

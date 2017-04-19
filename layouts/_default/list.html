@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <h2 class="m0">{{ .Title }}</h2>
+
+  {{.Content}} 
+  {{ $pag := .Paginate (where .Data.Pages "Type" "blog") }}
+  <section class="flex flex-column mt2">
+    {{ range $pag.Pages }}
+      <article class="border-bottom">
+
+        <a href="{{ .Permalink }}" class="flex items-baseline py2 text-decoration-none">
+          <h3 class="m0">{{ .Title }}<span class="regular"> / Posted on {{ .Date.Format (default "Monday, Jan 2, 2006" .Site.Params.dateFormat) }}</span></h2>
+          
+        </a>
+
+        {{ if .Params.tags }}
+          <span class="post-meta">
+            {{ range .Params.tags }}
+              #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+            {{ end }}
+          </span> 
+        {{ end }}
+
+      </article>
+    {{ end }}
+
+    {{ partial "pagination.html" . }}
+  </section>
+
+{{ end }}

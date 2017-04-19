@@ -1,1 +1,6 @@
-<h1>hello</h1>
+{{ define "main" }}
+    <section class="flex flex-column mt4">
+        <h1 class="center m0">{{ .Site.Params.headline }}</h1>
+    </section>
+    {{ .Content }}
+{{ end }}

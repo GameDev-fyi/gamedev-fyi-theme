@@ -1,0 +1,9 @@
+<header class="flex items-center justify-between mb2">
+    <a href="/" class="text-decoration-none"><h1 class="m0">{{ .Site.Title }}</h1></a>
+    <nav class="flex">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            <a class="btn px2" href="{{.URL}}">{{ .Name }}</a>
+        {{end}}
+    </nav>
+</header>
