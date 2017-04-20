@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<h2 class="m0">{{ .Title }}</h2>
+
+{{.Content}}
+
+<section class="flex flex-column mt2">
+  {{ range (.Data.Pages.GroupByParam "cat") }}
+
+  <span class="border-bottom my1 h3">{{ .Key }}</span>
+  {{ range .Pages }}
+  <article class="py1">
+    
+    <span class="h3 bold">{{ .Title }}</span>
+    <p class="m0">{{ .Description }}</p>
+
+    <ul class="list-reset m0">
+
+      <li class="inline-block mr1">
+
+        <a target="_blank" href="{{ .Params.site_link }}" title="Website">
+            <span class="h3 typcn typcn-home-outline"></span>
+        </a>
+
+        <a target="_blank" href="{{ .Params.site_link }}" title="Website">
+            <span class="h3 typcn typcn-social-twitter"></span>
+        </a>
+
+        <a target="_blank" href="{{ .Params.site_link }}" title="Website">
+            <span class="h3 typcn typcn-social-facebook"></span>
+        </a>
+        
+
+      </li>
+
+    </ul>
+
+    {{ if .Params.tags }}
+    <span class="post-meta">
+      {{ range .Params.tags }}
+        #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
+      {{ end }}
+    </span> {{ end }}
+
+  </article>
+  {{ end }} {{ end }}
+
+</section>
+{{ end }}
