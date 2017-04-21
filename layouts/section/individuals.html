@@ -10,26 +10,30 @@
   <span class="border-bottom my1 h3">{{ .Key }}</span>
   {{ range .Pages }}
   <article class="py1">
-    
-    <span class="h3 bold">{{ .Title }}</span>
+
+    <span class="h4 bold">{{ .Title }}</span>
     <p class="m0">{{ .Description }}</p>
 
     <ul class="list-reset m0">
 
-      <li class="inline-block mr1">
+      <li class="inline-block mr1 item">
 
         <a target="_blank" href="{{ .Params.site_link }}" title="Website">
             <span class="h3 typcn typcn-home-outline"></span>
         </a>
 
-        <a target="_blank" href="{{ .Params.site_link }}" title="Website">
+        {{ if .Params.twitter_link }}
+        <a target="_blank" href="{{ .Params.twitter_link }}" title="Twitter">
             <span class="h3 typcn typcn-social-twitter"></span>
         </a>
+        {{ end }}
 
-        <a target="_blank" href="{{ .Params.site_link }}" title="Website">
+        {{ if .Params.facebook_link }}
+        <a target="_blank" href="{{ .Params.facebook_link }}" title="Facebook">
             <span class="h3 typcn typcn-social-facebook"></span>
         </a>
-        
+        {{ end }}
+
 
       </li>
 

@@ -3,20 +3,15 @@
         © 2016 {{ .Site.Params.author }} | All Rights Reserved
     </p>
     <section id="social-urls" class="flex items-center">
-        <a target="_blank" class="p1 muted btn h4" href="{{ .Site.Params.twitter }}" title="Twitter">
-            <span class="socicon socicon-twitter"></span>
+        <a target="_blank" class="p1 muted btn" href="{{ .Site.Params.twitter }}" title="Twitter">
+            <span class="h3 typcn typcn-social-twitter"></span>
         </a>
-        <a target="_blank" class="p1 muted btn h4" href="{{ .Site.Params.github }}" title="Github">
-            <span class="socicon socicon-github"></span>
+
+        <a target="_blank" class="p1 muted btn" href="mailto:{{ .Site.Params.email }}?Subject=Found%20Your%20Website..." title="Email">
+            <span class="h3 typcn typcn-mail"></span>
         </a>
-        <a target="_blank" class="p1 muted btn h4" href="{{ .Site.Params.linkedin }}" title="Linkedin">
-            <span class="socicon socicon-linkedin"></span>
-        </a>
-        <a target="_blank" class="p1 muted btn h4" href="mailto:{{ .Site.Params.email }}?Subject=Found%20Your%20Website..." title="Email">
-            <span class="socicon socicon-mail"></span>
-        </a>
-        <a target="_blank" class="p1 muted btn h4" href="{{ .Site.BaseURL}}index.xml" title="RSS">
-            <span class="socicon socicon-rss"></span>
+        <a target="_blank" class="p1 muted btn" href="{{ .Site.BaseURL}}index.xml" title="RSS">
+            <span class="h3 typcn typcn-rss"></span>
         </a>
     </section>
 </footer>
