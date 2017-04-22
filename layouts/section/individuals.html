@@ -8,7 +8,7 @@
   {{ range (.Data.Pages.GroupByParam "cat") }}
 
   <span class="border-bottom my1 h3">{{ .Key }}</span>
-  {{ range .Pages }}
+  {{ range .Pages.ByTitle }}
   <article class="py1">
 
     <span class="h4 bold">{{ .Title }}</span>
