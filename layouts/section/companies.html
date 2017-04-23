@@ -5,7 +5,7 @@
 {{.Content}}
 
 <section class="flex flex-column mt2">
-  {{ range (.Data.Pages.GroupByParam "cat") }}
+  {{ range (.Data.Pages.GroupByParam "location") }}
 
   <span class="border-bottom my1 h3">{{ .Key }}</span>
   {{ range .Pages.ByTitle }}
