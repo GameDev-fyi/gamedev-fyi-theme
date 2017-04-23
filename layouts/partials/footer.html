@@ -1,10 +1,11 @@
 <footer id="footer" class="flex mt3 mb3 items-center">
     <p class="m0 flex-auto muted">
-        © 2016 {{ .Site.Params.author }} | All Rights Reserved
+        <span>Made with</span>
+        <span class="h3 typcn typcn-heart"></span>
+        <span>by <a href="https://goose.ninja/" target="_blank">Goose Ninja</a></span>
     </p>
 
     <section id="social-urls" class="flex items-center mr2">
-
         <a target="_blank" class="p1 muted btn" href="{{ .Site.Params.source_code }}" title="Source Code">
             <span class="h3 typcn typcn-code"></span>
         </a>
@@ -17,6 +18,10 @@
         </a>
         <a target="_blank" class="p1 muted btn" href="{{ .Site.BaseURL}}index.xml" title="RSS">
             <span class="h3 typcn typcn-rss"></span>
+        </a>
+
+        <a target="_blank" class="p1 muted btn" href="https://gamedev.fyi/" title="Home">
+            <span class="h3 typcn typcn-home"></span>
         </a>
     </section>
     <a href="https://www.netlify.com">
