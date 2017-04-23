@@ -19,11 +19,10 @@
 
 		<div class="mb1">
 			<label class="block">Subject:</label>
-			<select name="Subject"> <!--Supplement an id here instead of using 'name'-->
-				<option value="company">Company suggestion</option> 
-				<option value="individual">Individual Suggestion</option>
-				<option value="game">Game Suggestion</option>
-				<option value="other">Other</option>
+			<select name="Subject">
+				{{ range $.Param "contact_selection" }}
+					<option value="{{ .key }}">{{ .value }}</option> 
+				{{ end }}
 			</select>
 		</div>
 		
