@@ -6,23 +6,37 @@
     </p>
 
     <section id="social-urls" class="flex items-center mr2">
+        
+        {{ if .Site.Params.source_code }}
         <a target="_blank" class="p1 muted btn" href="{{ .Site.Params.source_code }}" title="Source Code">
             <span class="h3 typcn typcn-code"></span>
         </a>
-
+        {{ end }}
+        {{ if .Site.Params.twitter }}
         <a target="_blank" class="p1 muted btn" href="{{ .Site.Params.twitter }}" title="Twitter">
             <span class="h3 typcn typcn-social-twitter"></span>
         </a>
+        {{ end }}
+        {{ if .Site.Params.reddit }}
+        <a target="_blank" class="p1 muted btn" href="{{ .Site.Params.reddit }}" title="Reddit">
+            <span class="h3 typcn typcn-news"></span>
+        </a>
+        {{ end }}
+        {{ if .Site.Params.email }}
         <a target="_blank" class="p1 muted btn" href="mailto:{{ .Site.Params.email }}?Subject=Found%20Your%20Website..." title="Email">
             <span class="h3 typcn typcn-mail"></span>
         </a>
+        {{ end }}
+        
+        {{ if .Site.BaseURL }}
         <a target="_blank" class="p1 muted btn" href="{{ .Site.BaseURL}}index.xml" title="RSS">
             <span class="h3 typcn typcn-rss"></span>
         </a>
-
+        {{ end }}
         <a target="_blank" class="p1 muted btn" href="https://gamedev.fyi/" title="Home">
             <span class="h3 typcn typcn-home"></span>
         </a>
+        
     </section>
     <a href="https://www.netlify.com">
         <img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/>

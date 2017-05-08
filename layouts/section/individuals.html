@@ -18,9 +18,11 @@
 
       <li class="inline-block mr1 item">
 
+        {{ if .Params.site_link }}
         <a target="_blank" href="{{ .Params.site_link }}" title="Website">
             <span class="h3 typcn typcn-home-outline"></span>
         </a>
+        {{ end }}
 
         {{ if .Params.twitter_link }}
         <a target="_blank" href="{{ .Params.twitter_link }}" title="Twitter">
