@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<h2 class="m0">{{ .Title }}</h2>
+<h2 class="m0">{{ .Title }} ({{ len .Data.Pages }})</h2>
 
-{{.Content}}
+{{ .Content }}
 
 <section class="flex flex-column mt2">
   {{ range (.Data.Pages.GroupByParam "location") }}
 
-  <span class="border-bottom my1 h3">{{ .Key }}</span>
+  <span class="border-bottom my1 h3">{{ .Key }} ({{ len .Pages }})</span>
   {{ range .Pages.ByTitle }}
   <article class="py1 so-fancy item">
     <a href="{{ .Params.site_link }}" target="_blank">
