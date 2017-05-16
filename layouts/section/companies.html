@@ -1,17 +1,20 @@
 {{ define "main" }}
 
-<h2 class="m0">{{ .Title }} ({{ len .Data.Pages }})</h2>
+{{ $companies := (where .Data.Pages ".Params.active" true) }}
+
+<h2 class="m0">{{ .Title }} ({{ len $companies }})</h2>
 
 {{ .Content }}
 
 <section class="flex flex-column mt2">
-  {{ range (.Data.Pages.GroupByParam "location") }}
+  {{ range ($companies.GroupByParam "location") }}
 
   <span class="border-bottom my1 h3">{{ .Key }} ({{ len .Pages }})</span>
   {{ range .Pages.ByTitle }}
   <article class="py1 so-fancy item">
-    <a href="{{ .Params.site_link }}" target="_blank">
-      <span class="h4 bold">{{ .Title }}</span>
+    <a class="block" href="{{ .Params.site_link }}" target="_blank">
+      <span class="h4 bold">{{ .Title }}</span>      
+      <span>({{ dateFormat "2006" .Params.active_from }})</span>
       <p class="m0">{{ .Description }}</p>
     </a>
 
